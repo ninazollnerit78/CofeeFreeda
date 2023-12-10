@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: $bodyFont;
+    font-weight: 300;
+    color: $text;
+    line-height: 1.5;
+    font-size: $fontSize;
+}
+h1, h2, h3, h4 {
+    font-family: $headingsFont;
+}
+h1 {
+    font-size: 64px;
+}
+h2 {
+    font-size: 48px;
+}
+h3 {
+    font-size: 27px;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: $accents;
+    transition: $transition;
+    &:hover {
+        color: $accentsHover;
+    }
+}
+nav {
+    position: fixed;
+    width: 100%;
+    background: rgba($black,.8);
+    @media(max-width: 767px) {
+        padding: 10px 0;
+    }
+    .container {
+        @include flex;
+        @media(max-width: 767px) {
+            flex-direction: column;
+        }
+        ul {
+            @include flex;
+            a {
+                margin-left: 50px;
+                @media(max-width: 767px) {
+                    margin: 10px;
+                }
+            }
+        }
+    }
+}
+img {
+    display: block;
+    width: 100%;
+}
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: auto;
+    @media(max-width: 767px) {
+        width: 90%;
+    }
+}
+.btn {
+    padding: 10px 45px;
+    border-radius: 10px;
+}
+.btn-yellow {
+    background: $accents;
+    color: $text;
+    &:hover {
+        background: $accentsHover;
+        color: $text;
+    }
+}
+.py {
+    padding: 100px 0;
+}
+.text-center {
+    text-align: center;
+}

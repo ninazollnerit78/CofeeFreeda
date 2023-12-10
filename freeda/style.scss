@@ -1,0 +1,89 @@
+@import 'vars';
+@import 'mixins';
+@import 'globals';
+
+.main-header {
+    background-image: url(img/coffee-slajd-1.png);
+    background-position: center;
+    background-size: cover;
+    @include flex($justify: center);
+    .hgroup {
+        padding: 300px 0;
+        color: $white;
+        @media(max-width: 767px) {
+            padding: 250px 0 150px 0;
+        }
+        h1 {
+            color: $accents;
+        }
+        p {
+            margin: 40px 0;
+        }
+    }
+}
+.ponuda {
+    h2 {
+        color: $accents;
+        & + p {
+            padding: 30px 0 70px 0;
+        }
+    }
+    article {
+        @include flex;
+        div {
+            flex: 0 0 32%;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            h3 {
+                padding: 45px 0 15px 0;
+            }
+        }
+    }
+} 
+
+// meni
+.meni {
+    background: $black;
+    color: $accents;
+    @include flex;
+    
+    div {
+        &:first-child {
+            flex: 0 0 60%;
+            @media(max-width: 767px){
+                flex: 0 0 100%;
+            }
+            .row {
+                padding: 100px;
+                .wrapper {
+                    @include flex;
+                    .menu-item {
+                        @include flex;
+                        flex: 0 0 50%;
+                        margin-bottom: 30px;
+                        .img {
+                            flex: 0 0 40%;
+                            img {
+                                width: 100px;
+                            }
+                        }
+                        .text {
+                            flex: 0 0 60%;
+                            p {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child {
+            flex: 0 0 40%;
+        }
+    }
+}
